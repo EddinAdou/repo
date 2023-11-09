@@ -1,0 +1,35 @@
+entity User{
+
+    
+}
+entity Coordonnees{
+	email String
+    telephone String
+}
+entity Message{
+	contenu String
+}
+
+entity Destinateur{
+	nom String
+    emain String
+    telephone String
+}
+relationship OneToMany {
+  User{coordonnees} to Coordonnees
+}
+
+relationship OneToMany {
+  User{messages} to Message
+}
+
+relationship OneToOne {
+  Message{coordonnees} to Coordonnees
+}
+
+relationship OneToMany {
+  User{messages} to Message
+}
+
+dto all with mapstruct
+service all with serviceImpl
