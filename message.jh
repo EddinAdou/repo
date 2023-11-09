@@ -1,0 +1,33 @@
+entity Informations{
+	Name String
+   LastName String
+   Country String
+    City String
+    
+}
+entity Coordonnees{
+	Email String
+    Telephone String
+}
+entity Destinataire{
+	Name String
+	Email String
+    Telephone String
+}
+entity Message{
+	Contenu String
+}
+relationship OneToOne{
+	Coordonnees to Destinataire
+}
+relationship OneToMany{
+	Informations to Coordonnees
+}
+relationship OneToMany{
+	Informations to Message
+}
+relationship OneToMany{
+	Message to Destinataire
+}
+dto Informations, Coordonnees, Destinataire, Message, French with mapstruct
+service Informations, Coordonnees, Destinataire, Message with serviceImpl
